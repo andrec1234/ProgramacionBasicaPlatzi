@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click the button to change the color of this paragraph.</p>
+<input type="text" id="a" name="a">
+<span id="b">Click me</span>
+<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction2()">Try it</button>
+
+<script>
+x=document.getElementById("a")
+x.addEventListener("click",function1)
+
+label=document.getElementById("b");
+label.addEventListener("dblclick",function2)
+
+var x=0;
+var y=0;
+function function1 ()
+{
+	alert("a");
+    x=x+1;
+    //console.log(x);
+    comparar(x,y);
+}
+
+function function2()
+{
+	alert("b");
+    y=y+1;
+   // console.log(y);
+    comparar(x,y);
+}
+
+function comparar(x,y)
+{
+	if(x > y)
+    console.log("x es mayor")
+    if(x < y)
+    console.log("y es mayor")
+    if(x==y)
+    console.log("x e y son iguales")
+}
+
+
+
+function myFunction() {
+    var x = document.getElementById("demo");
+    x.style.color = "red";
+}
+
+function myFunction2() {
+    var x = document.getElementById("demo");
+    x.style.color = "blue";
+}
+</script>
+
+</body>
+</html>
