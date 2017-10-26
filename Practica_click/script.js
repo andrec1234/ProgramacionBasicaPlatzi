@@ -14,6 +14,7 @@ function dibujarLinea(grosor, color, xInicial, yInicial, xFinal, yFinal)
   contexto.moveTo(xInicial, yInicial);
   contexto.lineTo(xFinal, yFinal);
   contexto.stroke();
+  contexto.ClosePath(); ///fin
 }
 
 //captura de eventos
