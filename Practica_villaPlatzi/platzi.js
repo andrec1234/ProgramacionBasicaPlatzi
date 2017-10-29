@@ -3,40 +3,88 @@ var papel = vp.getContext("2d");
 
 var mapa = "tile.png"; // ruta del mapa;
 
+var fondo = {
+  url: "tile.png",
+  cargaOK: false
+}
+
+var vaca = {
+  url: "vaca.png",
+  cargaOK: false
+};
+
+var cerdo = {
+  url: "cerdo.png",
+  cargaOK: false
+};
+
+var pollo = {
+  url: "pollo.png",
+  cargaOK: false
+}
+
 //crear objeto e insertar fondo
-var fondo = new Image(); //creando objeto Imagen();-- definir objeto; -- clase
-fondo.src =mapa; //src metodo de la clase;
-fondo.addEventListener("load",dibujar); //solo esta listo cuando carga
+fondo.imagen = new Image(); //creando objeto Imagen();-- definir objeto; -- clase
+fondo.imagen.src = fondo.url; //src metodo de la clase;
+fondo.imagen.addEventListener("load",cargarFondo); //solo esta listo cuando carga
 
-var vaca = new Image();
-vaca.src = "vaca.png";
-vaca.addEventListener("load",dibujarVacas);
+vaca.imagen = new Image(); //se agrega al objeto literal;
+vaca.imagen.src = vaca.url;
+vaca.imagen.addEventListener("load",cargarVacas);
 
-var cerdo = new Image();
-cerdo.src = "cerdo.png";
-cerdo.addEventListener("load",dibujarCerdos);
+cerdo.imagen = new Image();
+cerdo.imagen.src = cerdo.url;
+cerdo.imagen.addEventListener("load",cargarCerdos);
 
-var pollo = new Image();
-pollo.src = "pollo.png";
-pollo.addEventListener("load",dibujarPollos);
+pollo.imagen = new Image();
+pollo.imagen.src = pollo.url;
+pollo.imagen.addEventListener("load",cargarPollos);
+
+function cargarFondo()
+{
+  fondo.cargaOK = true;
+  dibujar();
+}
+
+function cargarVacas()
+{
+  vaca.cargaOK = true;
+  dibujar();
+}
+
+function cargarCerdos()
+{
+  cerdo.cargaOK = true;
+  dibujar();
+}
+
+function cargarPollos()
+{
+  pollo.cargaOK = true;
+  dibujar();
+}
 
 function dibujar()
 {
-  papel.drawImage(fondo,0,0); //pintar
+  if(fondo.cargaOK == true)
+  {
+    papel.drawImage(fondo.imagen, 0, 0);
+  }
+  if(cerdo.cargaOK == true)
+  {
+    papel.drawImage(cerdo.imagen, 10, 10);
+  }
+  if(pollo.cargaOK == true)
+  {
+    papel.drawImage(pollo.imagen, 50, 50);
+  }
+  if(vaca.cargaOK == true)
+  {
+    papel.drawImage(vaca.imagen, 100, 100);
+  }
 }
 
-function dibujarVacas()
-{
-  papel.drawImage(vaca,0,10); //pintar
-}
-function dibujarCerdos()
-{
-  papel.drawImage(cerdo,0,100); //pintar
-}
-function dibujarPollos()
-{
-  papel.drawImage(pollo,0,200); //pintar
-}
+
 function aleatorio(min,max)
 {
   var resultado;
