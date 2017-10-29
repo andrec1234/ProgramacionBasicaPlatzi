@@ -1,3 +1,38 @@
+document.addEventListener("keyup",moverFarmer);
+
+var flechas = {
+  LEFT : 37,
+  UP : 38,
+  RIGTH : 39,
+  DOWN : 40
+};
+
+var posInix = 210;
+var posIniy = 210;
+var espacio = 10;
+
+function moverFarmer(event){
+  switch (event.keyCode) {
+    case flechas.LEFT:
+      posInix = posInix - espacio;
+      dibujar();
+      break;
+    case flechas.UP:
+      posIniy = posIniy - espacio;
+      dibujar();
+      break;
+    case flechas.RIGTH:
+      posInix = posInix + espacio;
+      dibujar();
+      break;
+    case flechas.DOWN:
+      posIniy = posIniy + espacio;
+      dibujar();
+      break;
+    default:
+  }
+}
+
 var vp = document.getElementById("villaplatzi");
 var papel = vp.getContext("2d");
 
@@ -23,6 +58,11 @@ var pollo = {
   cargaOK: false
 }
 
+var farmer = {
+  url: "farmer.jpg",
+  cargaOK: false
+}
+
 //crear objeto e insertar fondo
 fondo.imagen = new Image(); //creando objeto Imagen();-- definir objeto; -- clase
 fondo.imagen.src = fondo.url; //src metodo de la clase;
@@ -39,6 +79,10 @@ cerdo.imagen.addEventListener("load",cargarCerdos);
 pollo.imagen = new Image();
 pollo.imagen.src = pollo.url;
 pollo.imagen.addEventListener("load",cargarPollos);
+
+farmer.imagen = new Image();
+farmer.imagen.src = farmer.url;
+farmer.imagen.addEventListener("load",pintarFarmer);
 
 function cargarFondo()
 {
@@ -61,6 +105,12 @@ function cargarCerdos()
 function cargarPollos()
 {
   pollo.cargaOK = true;
+  dibujar();
+}
+
+function pintarFarmer()
+{
+  farmer.cargaOK = true;
   dibujar();
 }
 
@@ -109,6 +159,11 @@ function dibujar()
     }
 
   }
+  if(farmer.cargaOK == true)
+  {
+    papel.drawImage(farmer.imagen, posInix, posIniy);
+  }
+
 }
 
     var cantidad =  aleatorio(0, 25);
