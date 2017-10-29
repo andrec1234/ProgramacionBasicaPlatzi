@@ -75,8 +75,10 @@ function dibujar()
   {
     for(var i=0; i < cantidad; i++)
     {
-      var x = aleatorio(0,420);
-      var y = aleatorio(0,420);
+      var x = aleatorio(0,7);
+      var y = aleatorio(0,7);
+      x = x * 60;
+      y = y * 60;
         papel.drawImage(cerdo.imagen, x, y);
     }
 
@@ -85,8 +87,10 @@ function dibujar()
   {
     for(var v=0; v < cantidad; v++)
     {
-      var x = aleatorio(0,420);
-      var y = aleatorio(0,420);
+      var x = aleatorio(0,7);
+      var y = aleatorio(0,7);
+      x = x * 60;
+      y = y * 60;
         papel.drawImage(pollo.imagen, x, y);
     }
 
@@ -94,10 +98,13 @@ function dibujar()
   }
   if(vaca.cargaOK == true)
   {
-    for(var c=0; c                                                         < cantidad; c++)
+    for(var c=0; c < cantidad; c++)
     {
-      var x = aleatorio(0,420);
-      var y = aleatorio(0,420);
+      var x = aleatorio(0,7);
+      var y = aleatorio(0,7);
+      x = x * 60;
+      y = y * 60;
+
       papel.drawImage(vaca.imagen, x, y);
     }
 
