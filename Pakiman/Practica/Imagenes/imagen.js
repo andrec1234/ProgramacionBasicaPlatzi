@@ -10,6 +10,10 @@ class imagen {
     this.animal = nombre,
     this.vida = vida,
     this.imagen.src = Imagenes[this.nombre];
+
+  }
+
+  mostrar(){
     document.write("<hr/>")
     document.write("El es un: " + this.animal + "<br />");
     document.write("Tiene de vida: " + this.vida + "<br />");
