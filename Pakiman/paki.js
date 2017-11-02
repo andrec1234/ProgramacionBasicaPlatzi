@@ -3,10 +3,25 @@ imagenes["Cauchin"] = "vaca.png";
 imagenes["Pokacho"] = "pollo.png";
 imagenes["Tocinauro"] = "cerdo.png";
 
-var cauchin = new Pakiman("Cauchin",100,30);
-var pokacho = new Pakiman("Pokacho",80,50);
-var tocinauro = new Pakiman("Tocinauro",120,40);
+//utilizando la colección - array
+var coleccion = [];
+coleccion.push(new Pakiman("Cauchin",100,30));
+coleccion.push(new Pakiman("Pokacho",80,50));
+coleccion.push(new Pakiman("Tocinauro",120,40));
 
-pokacho.mostrar();
-cauchin.mostrar();
-tocinauro.mostrar();
+//creando un ciclos
+for (var pakin of coleccion) //para cada objeto dentro de la colección
+{
+  //console.log(coleccion[pakin]);
+  pakin.mostrar();
+  //lo que hace realmente el of es usar la instancia
+//  new Pakiman("Cauchin",100,30).mostrar();
+}
+
+//usando el indice
+for(var pakin in coleccion)
+{
+  coleccion[pakin].mostrar();
+}
+//el of muestra la instancia ya no el indice
+https://i.imgur.com/K5IGxSQ.png
