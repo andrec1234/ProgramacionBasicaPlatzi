@@ -16,7 +16,8 @@ class Pakiman
   }
   mostrar()
   {
-    document.body.appendChild(this.imagen)
+    //document.body.appendChild(this.imagen)
+    document.write("<img src=" + this.imagen.src + ">;")
     document.write("<p>");
     document.write("<strong>" + this.nombre+ "</strong><br/>");
     document.write("Vida: " + this.vida+ "<br/>");
