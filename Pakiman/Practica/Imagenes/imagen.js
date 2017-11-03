@@ -17,7 +17,8 @@ class imagen {
     document.write("<hr/>")
     document.write("El es un: " + this.animal + "<br />");
     document.write("Tiene de vida: " + this.vida + "<br />");
-    document.body.appendChild(this.imagen);
+    document.write("<img src=" + this.imagen.src + ">;")
+    //document.body.appendChild(this.imagen);
   }
 }
 foto = new imagen("Pollo", "Pollo", 50);
