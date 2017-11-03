@@ -24,4 +24,4 @@ for(var pakin in coleccion)
   coleccion[pakin].mostrar();
 }
 //el of muestra la instancia ya no el indice
-https://i.imgur.com/K5IGxSQ.png
+//https://i.imgur.com/K5IGxSQ.png
