@@ -2,6 +2,8 @@
 
 [Andric Vargas](#)
 
+|Funcionando : [Aqui](https://andrec1234.github.io/ProgramacionBasicaPlatzi/)
+
 En este repositorio colocaré los ejercicios que son desarrollados en el curso de progamación básica.
 La distribución es la siguiente.
 
